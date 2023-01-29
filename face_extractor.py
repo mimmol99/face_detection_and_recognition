@@ -58,9 +58,7 @@ while True:
     if key & 0xFF == ord('s'):
         # Save the frame to a file
         for index,(x, y, w, h) in enumerate(faces):
-            #name = input("tell me the name of "+str(colors_index[index])+" box")
-            #name = 
-            check_path(dataset_path+'/'+name)
+            
             cropped_image = frame[y+tickness:y+h-tickness, x+tickness:x+w-tickness]  # Crop the frame to only include the rectangle around the face
             cv2.imwrite(dataset_path+'/'+name+'/'+str(len(os.listdir(dataset_path+'/'+name)))+".jpg", cropped_image)
             print("Frame saved!",str(len(os.listdir(dataset_path+'/'+name))))
